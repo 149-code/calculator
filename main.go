@@ -13,11 +13,12 @@ func main() {
 	app := webview.New(true)
 	defer app.Destroy()
 
-	app.SetSize(300, 365, webview.HintNone)
+	app.SetSize(300, 365, webview.HintFixed)
 	app.Navigate("http://localhost:8080/index.html")
 	app.Bind("goEquals", func(expr string) {
 		app.Eval(fmt.Sprintf(`dSet("%f")`, parse_add(expr)))
 	})
+	app.Bind("goLog", fmt.Println)
 	app.Run()
 }
 
