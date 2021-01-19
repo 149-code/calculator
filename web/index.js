@@ -30,10 +30,10 @@ document.addEventListener('keydown', (event) => {
 		dAppend("/");
 	}
 
-	if (event.key === 'c' && event.key === 'C') {
+	if (event.key == 'c' || event.key == 'C') {
 		dSet("");
 	}
-	if (event.key === 'Enter') {
+	if (event.key == 'Enter') {
 		goEquals(display);
 	}
 })
